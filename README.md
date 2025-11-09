@@ -5,75 +5,92 @@ To implement Erosion and Dilation using Python and OpenCV.
 1. Anaconda - Python 3.7
 2. OpenCV
 ## Algorithm:
-### Step1:
-<br>
 
+# Step-1:
+Create a black image of size 100x600 pixels.
 
-### Step2:
-<br>
+# Step-2:
+Use a specified font to write the word "Lifestyle" on the image at a defined position.
 
-### Step3:
-<br>
+# Step-3:
+Show the image containing the text without axis labels.
 
-### Step4:
-<br>
+# Step-4:
+Define a structuring element for morphological operations (e.g., a cross-shaped kernel).
 
-### Step5:
-<br>
+# Step-5:
+Apply erosion to the image using the defined structuring element to reduce the size of white regions.
 
+# Step-6:
+Apply dilation to the original image using the same structuring element to increase the size of white regions.
  
 ## Program:
 
-``` Python
+
 # Import the necessary packages
 
-
+```
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+```
 
 # Create the Text using cv2.putText
 
-
+```
+img = np.zeros((100, 600, 3), dtype='uint8') 
+font = cv2.FONT_HERSHEY_COMPLEX
+text_color = (255, 255, 255)  
+cv2.putText(img, 'JANANI K', (60, 70), font, 2, text_color, 5, cv2.LINE_AA)
+plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+plt.axis('off')
+plt.show()
+```
 
 # Create the structuring element
 
+```
+kernel = np.ones((5,5),np.uint8)
+kernel1 = cv2.getStructuringElement(cv2.MORPH_CROSS,(5,5))
+cv2.erode(img,kernel)
 
+kernel = np.ones((3, 3), np.uint8)
+```
 
 # Erode the image
 
-
+```
+img_erode = cv2.erode(img,kernel1)
+plt.imshow(img_erode)
+plt.axis('off')
+```
 
 
 # Dilate the image
 
-
-
-
-
 ```
+img_dilate = cv2.dilate(img,kernel1)
+plt.imshow(img_dilate)
+plt.axis('off')
+```
+
+
+
 ## Output:
 
 ### Display the input Image
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+<img width="698" height="145" alt="image" src="https://github.com/user-attachments/assets/ef110bab-4d64-41a8-83ea-db88be601b3c" />
+
 
 ### Display the Eroded Image
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+<img width="731" height="138" alt="image" src="https://github.com/user-attachments/assets/ab516c85-ebb7-4dcf-a2ab-1761819d9550" />
+
 
 ### Display the Dilated Image
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+<img width="720" height="130" alt="image" src="https://github.com/user-attachments/assets/226a4de1-78a2-47fe-ad65-1cde4d113f5b" />
 
 ## Result
 Thus the generated text image is eroded and dilated using python and OpenCV.
