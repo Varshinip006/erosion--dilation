@@ -41,7 +41,7 @@ import matplotlib.pyplot as plt
 img = np.zeros((100, 600, 3), dtype='uint8') 
 font = cv2.FONT_HERSHEY_COMPLEX
 text_color = (255, 255, 255)  
-cv2.putText(img, 'JANANI K', (60, 70), font, 2, text_color, 5, cv2.LINE_AA)
+cv2.putText(img, 'PRIYA VARSHINI', (60, 70), font, 2, text_color, 5, cv2.LINE_AA)
 plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
 plt.axis('off')
 plt.show()
@@ -80,17 +80,20 @@ plt.axis('off')
 
 ### Display the input Image
 
-<img width="698" height="145" alt="image" src="https://github.com/user-attachments/assets/ef110bab-4d64-41a8-83ea-db88be601b3c" />
+<img width="317" height="61" alt="image" src="https://github.com/user-attachments/assets/c533632b-e0fb-4c49-8f47-d000f1e54c59" />
+
 
 
 ### Display the Eroded Image
 
-<img width="731" height="138" alt="image" src="https://github.com/user-attachments/assets/ab516c85-ebb7-4dcf-a2ab-1761819d9550" />
+<img width="323" height="61" alt="image" src="https://github.com/user-attachments/assets/e1001794-5051-4d7c-821b-03d02387ff06" />
+
 
 
 ### Display the Dilated Image
 
-<img width="720" height="130" alt="image" src="https://github.com/user-attachments/assets/226a4de1-78a2-47fe-ad65-1cde4d113f5b" />
+<img width="316" height="56" alt="image" src="https://github.com/user-attachments/assets/61ac92de-55a5-40d8-b055-3f4aff648b8e" />
+
 
 ## Result
 Thus the generated text image is eroded and dilated using python and OpenCV.
